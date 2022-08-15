@@ -10,10 +10,10 @@ public class RadioTest {
         Radio rad = new Radio();
 
 
-        rad.setNumber(5);
+        rad.setNumber(15);
 
-        int expected = 5;
-        int actual = rad.getNumber;
+        int expected = 0;
+        int actual = rad.getNumber();
 
         Assertions.assertEquals(expected, actual);
 
