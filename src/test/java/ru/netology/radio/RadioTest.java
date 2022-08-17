@@ -17,9 +17,43 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
 
-
     }
 
+    @Test
+    public void NewNumberBefore0() {
+        Radio rad = new Radio();
+
+
+        rad.setNumber(-1);
+
+        int expected = 0;
+        int actual = rad.getNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void NewCurrentVolume() {
+        Radio rad = new Radio();
+
+        rad.setCurrentVolume(11);
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void NewCurrentVolumeBefore0() {
+        Radio rad = new Radio();
+
+        rad.setCurrentVolume(-1);
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void NextNumberBefore9() {

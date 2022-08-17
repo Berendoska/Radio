@@ -39,17 +39,19 @@ public class Radio {
     }
 
     public int getNumber() {
+
         return number;
     }
 
     public void setNumber(int newNumber) {
-        number = newNumber;
+
         if (newNumber > 9) {
             return;
         }
         if (newNumber < 0) {
             return;
         }
+        number = newNumber;
     }
 
     public int getCurrentVolume() {
