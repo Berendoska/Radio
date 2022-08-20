@@ -1,12 +1,51 @@
 package ru.netology.radio;
 
 public class Radio {
+
+
     private int number;
-    private int currentVolume;
+    private int quantityStation;
+
+
+    private int maxVolume = 100;
+    private int minVolume = 0;
+    private int currentVolume = minVolume;
+
+    public Radio() {
+        this.quantityStation = 10;
+
+    }
+
+    public Radio(int quantityStation) {
+        this.quantityStation = quantityStation;
+
+    }
+    public int getQuantityStation() {
+
+        return quantityStation;
+    }
+
+    public Radio(int maxVolume, int minVolume) {
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.currentVolume = minVolume;
+
+    }
+
+
+    public int getMaxVolume() {
+
+        return maxVolume;
+    }
+    public int getMinVolume() {
+
+        return minVolume;
+    }
+
 
     public void nextNumber() {
 
-        if (number < 9) {
+        if (number < quantityStation - 1) {
             number++;
         } else {
             number = 0;
@@ -18,20 +57,20 @@ public class Radio {
             number--;
 
         } else {
-            number = 9;
+            number = quantityStation - 1;
         }
     }
 
     public void increaseCurrentVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume++;
         } else {
-            currentVolume = 10;
+            currentVolume = 100;
         }
     }
 
     public void decreaseCurrentVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume--;
         } else {
             currentVolume = 0;
@@ -45,7 +84,7 @@ public class Radio {
 
     public void setNumber(int newNumber) {
 
-        if (newNumber > 9) {
+        if (newNumber > quantityStation - 1) {
             return;
         }
         if (newNumber < 0) {
@@ -59,10 +98,10 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 10) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVolume) {
             return;
         }
 
